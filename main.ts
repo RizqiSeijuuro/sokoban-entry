@@ -311,6 +311,8 @@ function bfsPath(
 // --------------------------------------------------------------------------------------------------
 
 function boxesKeyOf(boxes: number[]): string {
+  // `boxes` must already be sorted by cell index: the key is only a valid state identity (and
+  // dedupes correctly against other states) when box order is canonical, not insertion order.
   return boxes.join(',');
 }
 
